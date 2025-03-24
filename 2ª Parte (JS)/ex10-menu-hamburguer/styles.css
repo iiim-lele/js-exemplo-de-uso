@@ -1,72 +1,94 @@
 /* styles.css */
 /* Reset básico para remover margens e paddings padrão */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Define a fonte padrão para o corpo da página */
+/* define a fonte padrão para o corpo da página */
 body {
   font-family: Arial, sans-serif;
 }
 
-/* Estilo da barra de navegação */
+/* estilo da barra de navegação */
 nav {
   display: flex;
-  justify-content: space-between; /* Alinha os itens à esquerda e à direita */
-  align-items: center; /* Centraliza verticalmente */
-  padding: 1rem 2rem; /* Espaçamento interno */
-  background-color: #333; /* Cor de fundo */
+  /* alinha os itens à esquerda e à direita */
+  justify-content: space-between; 
+  /* centraliza verticalmente */
+  align-items: center; 
+  /* espaçamento interno */
+  padding: 1rem 2rem; 
+  /* cor de fundo */
+  background-color: #333; 
 }
 
-/* Estilo do ícone do menu hambúrguer */
-/* .menu-icon {
+/* estilo do ícone do menu hambúrguer */
+.menu-icon {
+  /* não exibe em telas grandes */
+  display: none;
+  font-family: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
 
-  2ª Digitação (Aqui) 
-
-} */
-
-/* Estilo da lista de navegação */
+/* estilo da lista de navegação */
 .nav-list {
-  display: flex; /* Exibe os itens em linha */
-  list-style: none; /* Remove os marcadores de lista */
+  /* exibe os itens em linha */
+  display: flex; 
+  /* remove os marcadores de lista */
+  list-style: none; 
 
-/* Move a lista para o lado direito */
+/* move a lista para o lado direito */
   /* margin-left: auto;  */
 }
 
-/* Estilo dos itens da lista */
+/* estilo dos itens da lista */
 .nav-list li {
-  margin-left: 2rem; /* Espaçamento entre os itens */
+  /* espaçamento entre os itens */
+  margin-left: 2rem; 
 }
 
-/* Estilo dos links */
+/* estilo dos links */
 .nav-list a {
-  color: white; /* Cor do texto */
-  text-decoration: none; /* Remove o sublinhado */
-  font-size: 1rem; /* Tamanho da fonte */
+  /* cor do texto */
+  color: white; 
+  /* remove o sublinhado */
+  text-decoration: none;
+  /* tamanho da fonte */ 
+  font-size: 1rem; 
 }
 
-/* Estilos para telas pequenas (max-width: 768px) */
+/* estilos para telas pequenas (max-width: 768px) */
 @media (max-width: 768px) {
-  /* .menu-icon {
-
-    3ª Digitação (Aqui)
-    
+  .menu-icon {
+    /* exibe em bloco - um abaixo do outro (em telas menores) */
+    display: block;
   }
 
   .nav-list {
-
-  } */
-
-  .nav-list li {
-    margin: 1rem 0; /* Espaçamento entre os itens */
-    text-align: center; /* Centraliza o texto */
+    /* não exibe lista */
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
   }
 
-  /* Classe ativada via JavaScript para exibir a lista */
+  .nav-list li {
+    /* espaçamento entre os itens */
+    margin: 1rem 0; 
+    /* centraliza o texto */
+    text-align: center; 
+  }
+
+  /* classe ativada via JavaScript para exibir a lista */
   .nav-list.active {
-    display: flex; /* Exibe a lista quando a classe "active" é adicionada */
+    /* exibe a lista quando a classe "active" é adicionada */
+    display: flex; 
   }
 }
