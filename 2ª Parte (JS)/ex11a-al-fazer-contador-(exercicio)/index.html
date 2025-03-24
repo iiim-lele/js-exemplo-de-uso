@@ -28,31 +28,53 @@
       cursor: pointer;
       border: none;
       border-radius: 5px;
-      background-color: #007bff;
+      background-color: palevioletred;
       color: white;
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: rgb(252, 162, 177);
     }
   </style>
 </head>
+
 <body>
-  <!-- Temporizador -->
   <div id="timer">0</div>
 
-  <!-- Botões de controle -->
   <button id="startButton">Iniciar</button>
   <button id="pauseButton">Pausar</button>
   <button id="resetButton">Resetar</button>
 
-  <!-- Script JavaScript embutido na página -->
   <script>
+    let timer = 0;
+    let interval = null;
 
+    // contar
+    function startTimer() {
+      if (!interval) {
+        interval = setInterval(() => {
+          timer++;
+          document.getElementById("timer").innerText = timer;
+        }, 1000);
+      }
+    }
 
-    // 1ª Digitação (Resolva aqui o exercício)
+    // pausar
+    function pauseTimer() {
+      clearInterval(interval);
+      interval = null;
+    }
 
+    // resetar
+    function resetTimer() {
+      pauseTimer();
+      timer = 0;
+      document.getElementById("timer").innerText = timer;
+    }
 
+    document.getElementById("startButton").addEventListener("click", startTimer);
+    document.getElementById("pauseButton").addEventListener("click", pauseTimer);
+    document.getElementById("resetButton").addEventListener("click", resetTimer);
   </script>
 </body>
 </html>

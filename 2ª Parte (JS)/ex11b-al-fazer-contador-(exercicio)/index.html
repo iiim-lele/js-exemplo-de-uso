@@ -20,7 +20,6 @@
       font-size: 1.5rem;
       margin-bottom: 20px;
       text-align: center;
-      max-width: 600px;
     }
 
     button {
@@ -29,25 +28,26 @@
       cursor: pointer;
       border: none;
       border-radius: 5px;
-      background-color: #28a745;
+      background-color: palevioletred;
       color: white;
     }
 
     button:hover {
-      background-color: #218838;
+      background-color: rgb(252, 162, 177);
     }
   </style>
 </head>
+
 <body>
-  <!-- Parágrafo para exibir a citação -->
+  <!-- parágrafo para exibir a citação -->
   <p id="quote">Clique no botão para gerar uma citação.</p>
 
-  <!-- Botão para gerar uma nova citação -->
+  <!-- botão para gerar uma nova citação -->
   <button id="newQuoteButton">Nova Citação</button>
 
-  <!-- Script JavaScript embutido na página -->
+  <!-- script JavaScript embutido na página -->
   <script>
-    // Array de citações
+    // array de citações
     const quotes = [
       "A vida é o que acontece enquanto você está ocupado fazendo outros planos. – John Lennon",
       "A simplicidade é o último grau de sofisticação. – Leonardo da Vinci",
@@ -56,8 +56,16 @@
       "Não importa o quão devagar você vá, desde que você não pare. – Confúcio"
     ];
 
-       // 1ª Digitação (Resolva aqui o exercício)
+    // função para gerar uma citação aleatória e exibi-la
+    function displayRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quoteElement = document.getElementById('quote');
+      quoteElement.textContent = quotes[randomIndex];
+    }
 
+    // evento para o clique no botão
+    const button = document.getElementById('newQuoteButton');
+    button.addEventListener('click', displayRandomQuote);
 
   </script>
 </body>
